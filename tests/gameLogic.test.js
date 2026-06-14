@@ -181,10 +181,10 @@ test('hit feedback shakes briefly and then clears', () => {
 test('audio cues expose background and death sound settings', () => {
   const cues = Logic.createAudioCues();
 
-  assert.equal(cues.background.src, 'assets/audio/see-you-again.mp4');
+  assert.equal(cues.background.src, 'assets/audio/see-you-again.mp3');
   assert.equal(cues.background.loop, true);
-  assert.ok(cues.background.volume > 0);
-  assert.ok(cues.background.volume < 0.5);
+  assert.ok(cues.background.volume >= 0.6);
+  assert.ok(cues.background.volume <= 0.8);
   assert.equal(cues.death.src, 'assets/audio/mamba-out-normal.mp3');
   assert.equal(cues.death.preload, true);
   assert.ok(cues.death.volume > 0.7);
