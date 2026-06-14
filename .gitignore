@@ -1,0 +1,9 @@
+# Local source videos and generated scratch files are too large for normal repo upload.
+*.mp4
+.local-media/
+output/
+tmp/
+.superpowers/
+
+# Codex/local attachment cache.
+.codex-remote-attachments/
