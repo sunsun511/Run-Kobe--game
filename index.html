@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>科比快跑</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar" aria-label="游戏状态">
+        <div>
+          <h1>科比快跑</h1>
+          <p>长按跳更高，按 ↓ 下蹲躲直升机</p>
+        </div>
+        <div class="scoreboard">
+          <span id="scoreValue">00000</span>
+          <span>HI <strong id="highScoreValue">00000</strong></span>
+        </div>
+      </header>
+
+      <section class="stage-card" aria-label="科比快跑游戏区域">
+        <canvas id="gameCanvas" width="900" height="360">
+          你的浏览器不支持 Canvas，请换一个现代浏览器打开。
+        </canvas>
+
+        <div class="overlay" id="overlay">
+          <p class="mode-pill" id="modePill">MAMBA MODE</p>
+          <h2 id="overlayTitle">科比快跑</h2>
+          <p id="overlayText">跳过冰红茶，蹲下躲直升机，捡篮球获得几秒无敌。</p>
+          <button class="start-button" id="startButton" type="button">开始</button>
+        </div>
+      </section>
+
+      <div class="status-row">
+        <div class="invincible-meter" aria-label="无敌时间">
+          <span id="invincibleLabel">篮球无敌：未激活</span>
+          <div class="meter-track">
+            <div class="meter-fill" id="invincibleFill"></div>
+          </div>
+        </div>
+        <button class="small-button" id="audioButton" type="button" aria-pressed="true">BGM ON</button>
+        <button class="small-button" id="restartButton" type="button">重新开始</button>
+      </div>
+
+      <nav class="touch-controls" aria-label="触摸操作">
+        <button class="control-button" id="jumpButton" type="button">跳跃</button>
+        <button class="control-button duck" id="duckButton" type="button">下蹲</button>
+      </nav>
+
+      <audio id="bgMusic" src="assets/audio/see-you-again.mp4" preload="auto" loop playsinline></audio>
+      <audio id="deathSound" src="assets/audio/mamba-out-normal.mp3" preload="auto" playsinline></audio>
+    </main>
+
+    <script src="src/gameLogic.js"></script>
+    <script src="src/game.js"></script>
+  </body>
+</html>
