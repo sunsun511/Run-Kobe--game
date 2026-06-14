@@ -190,7 +190,7 @@
   function createAudioCues() {
     return {
       background: {
-        src: 'assets/audio/see-you-again.mp4',
+        src: 'assets/audio/see-you-again.mp3',
         loop: true,
         volume: 0.28,
       },
